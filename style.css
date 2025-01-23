@@ -65,9 +65,11 @@ h2 {
 }
 #block-right {
   font-size: 30px;
+  position: relative;
+  top: 8px;
 }
 select {
-  padding: 7px 00px;
+  padding: 7px 0px;
   border-radius: 10px;
   font-family: "Genos", serif;
   background-color: #f6f6f6;
