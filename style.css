@@ -1,6 +1,102 @@
+body {
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/155/266/original/milky_way_galaxy_2-wallpaper-2560x1920.jpg?1737394964);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  height: 100vh;
+}
+img {
+  margin: 50px auto;
+  display: flex;
+  max-width: 300px;
+  transform: rotateZ(13deg);
+  position: absolute;
+  left: 30%;
+  justify-content: center;
+  align-items: center;
+}
+#click-me:hover {
+  animation: shake 0.2s infinite;
+  cursor: pointer;
+}
 h1 {
+  font-size: 50px;
+  margin: 0px 0px 20px;
+}
+#app {
+  text-align: center;
+  font-family: "Genos", serif;
+  padding: 30px;
+  width: 400px;
+  border-radius: 10px;
+  color: #3842ac;
+  background-color: #ffffff;
+  margin: 0 auto;
+  left: 400px;
+  border: solid 1px rgba(254, 250, 216);
+  box-shadow: 0px 0px 74px 15px rgba(254, 250, 216, 0.8);
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(1deg) rotateZ(13deg);
+  }
+
+  25% {
+    transform: rotate(-1deg) rotateZ(13deg);
+  }
+
+  50% {
+    transform: rotate(1deg) rotateZ(13deg);
+  }
+
+  75% {
+    transform: rotate(-1deg) rotateZ(13deg);
+  }
+
+  100% {
+    transform: rotate(1deg) rotateZ(13deg);
+  }
+}
+h2 {
+  font-size: 25px;
+  margin: 0;
+}
+#date {
+  font-size: 20px;
+}
+#block-right {
+  font-size: 30px;
+}
+select {
+  padding: 7px 00px;
+  border-radius: 10px;
+  font-family: "Genos", serif;
+  background-color: #f6f6f6;
+  color: rgb(71, 84, 110);
+  font-size: 15px;
+  margin-bottom: 20px;
+  width: 65%;
   text-align: center;
 }
 footer {
   text-align: center;
+  padding-top: 50px;
+  font-size: 12px;
+}
+#tiny-tardis {
+  transform: rotateZ(13deg);
+  max-width: 100px;
+  position: sticky;
+  overflow: visible;
+  left: 30px;
+  top: 0;
+  margin: 0;
+}
+.citygroup {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  padding: 10px 0px;
+  margin-top: 20px;
 }
