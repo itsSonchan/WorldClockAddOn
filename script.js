@@ -4,7 +4,6 @@ tardis.addEventListener("click", showClock);
 function showClock() {
   let placeholder = document.querySelector("#tardis");
   placeholder.innerHTML = `
- 
   <img id="tiny-tardis"
         src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/155/275/original/tardis.png?1737396195"
         alt="tardis"
@@ -40,4 +39,24 @@ function showClock() {
       </footer>
     </div>
     `;
+  attachTinyTardisListener();
+}
+function attachTinyTardisListener() {
+  let tinyTardis = document.querySelector("#tiny-tardis");
+  tinyTardis.addEventListener("click", backToStart);
+}
+
+function backToStart() {
+  let placeholder = document.querySelector("#body");
+  placeholder.innerHTML = ` 
+      <div id="tardis">
+      <img
+        id="click-me"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/155/275/original/tardis.png?1737396195"
+        alt="tardis"
+      />
+    </div>
+`;
+  let tardis = document.querySelector("#click-me");
+  tardis.addEventListener("click", showClock);
 }

@@ -93,6 +93,9 @@ footer {
   top: 0;
   margin: 0;
 }
+#tiny-tardis:hover {
+  cursor: pointer;
+}
 .citygroup {
   display: flex;
   justify-content: space-between;
