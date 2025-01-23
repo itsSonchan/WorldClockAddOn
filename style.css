@@ -93,6 +93,7 @@ footer {
 }
 #tiny-tardis:hover {
   cursor: pointer;
+  animation: shake 0.2s infinite;
 }
 .citygroup {
   display: flex;
