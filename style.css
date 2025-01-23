@@ -5,15 +5,13 @@ body {
   background-color: black;
   height: 100vh;
 }
-img {
+#click-me {
   margin: 50px auto;
-  display: flex;
   max-width: 300px;
   transform: rotateZ(13deg);
-  position: absolute;
   left: 30%;
-  justify-content: center;
   align-items: center;
+  display: block;
 }
 #click-me:hover {
   animation: shake 0.2s infinite;
