@@ -12,8 +12,15 @@ function showClock() {
       <h1>World clock</h1>
       <select name="city" id="city">
         <option value="" selected>Select a city</option>
+                <option value="current">My current location</option>
         <option value="Europe/Berlin">Berlin</option>
+        <option value="America/New_York">New York</option>
         <option value="Australia/Sydney">Sydney</option>
+                <option value="Europe/Athens">Athens</option>
+                <option value="America/Mexico_City">Mexico City</option>
+                                <option value="Asia/Beirut">Beirut</option>
+                                <option value="Africa/Dakar">Dakar</option>
+
       </select>
       <div class="citygroup" id="berlin">
         <div class="blockLeft">
