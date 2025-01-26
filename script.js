@@ -1,6 +1,8 @@
 let tardis = document.querySelector("#click-me");
 tardis.addEventListener("click", showClock);
 
+let selectedCity = null;
+
 function showClock() {
   let placeholder = document.querySelector("#tardis");
   placeholder.innerHTML = `
@@ -19,7 +21,7 @@ function showClock() {
                 <option value="Europe/Athens">Athens</option>
                 <option value="America/Mexico_City">Mexico City</option>
                                 <option value="Asia/Beirut">Beirut</option>
-                                <option value="Africa/Dakar">Dakar</option>
+                        
 
       </select>
       <div class="citygroup" id="berlin">
@@ -55,29 +57,47 @@ function showClock() {
       </footer>
     </div>
     `;
+  let citySelect = document.querySelector("#city");
+  citySelect.addEventListener("change", updateCity);
   attachTinyTardisListener();
-
-  function updateClock() {
-    let berlin = document.querySelector("#berlin");
-    let berlinDate = berlin.querySelector(".date");
-    berlinDate.innerHTML = moment.tz("Europe/Berlin").format("MMMM Do YYYY");
-    let berlinTime = berlin.querySelector(".time");
-    berlinTime.innerHTML = moment.tz("Europe/Berlin").format("HH:mm:ss");
-
-    let tokyo = document.querySelector("#tokyo");
-    let tokyoDate = tokyo.querySelector(".date");
-    tokyoDate.innerHTML = moment.tz("Asia/Tokyo").format("MMMM Do YYYY");
-    let tokyoTime = tokyo.querySelector(".time");
-    tokyoTime.innerHTML = moment.tz("Asia/Tokyo").format("HH:mm:ss");
-
-    let london = document.querySelector("#london");
-    let londonDate = london.querySelector(".date");
-    londonDate.innerHTML = moment.tz("Europe/London").format("MMMM Do YYYY");
-    let londonTime = london.querySelector(".time");
-    londonTime.innerHTML = moment.tz("Europe/London").format("HH:mm:ss");
-  }
-  setInterval(updateClock, 1000);
 }
+
+function updateClock() {
+  updateCityDisplay("Europe/London", "#london");
+  updateCityDisplay("Asia/Tokyo", "#tokyo");
+  if (selectedCity) {
+    updateCityDisplay(selectedCity, "#berlin");
+  } else {
+    updateCityDisplay("Europe/Berlin", "#berlin");
+  }
+}
+setInterval(updateClock, 1000);
+
+function updateCityDisplay(timezone, cityName) {
+  let city = document.querySelector(cityName);
+  let cityDate = city.querySelector(".date");
+  cityDate.innerHTML = moment.tz(timezone).format("MMMM Do YYYY");
+  let cityTime = city.querySelector(".time");
+  cityTime.innerHTML = moment.tz(timezone).format("HH:mm:ss");
+}
+
+function updateCity(event) {
+  let cityValue = event.target.value;
+  if (!cityValue) {
+    selectedCity = null;
+    return;
+  }
+  if (cityValue === "current") {
+    selectedCity = moment.tz.guess();
+  } else {
+    selectedCity = cityValue;
+  }
+  let cityNameDisplay = document.querySelector("#berlin .city");
+  cityName = selectedCity.split("/")[1].replace("_", " ");
+  cityNameDisplay.innerHTML = cityName;
+  updateCityDisplay(selectedCity, "#berlin");
+}
+
 function attachTinyTardisListener() {
   let tinyTardis = document.querySelector("#tiny-tardis");
   tinyTardis.addEventListener("click", backToStart);
