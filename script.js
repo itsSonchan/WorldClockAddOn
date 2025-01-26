@@ -18,19 +18,28 @@ function showClock() {
       <div class="citygroup" id="berlin">
         <div class="blockLeft">
           <h2 class="city">Berlin</h2>
-          <div class="date">August 15th 2024</div>
+          <div class="date"></div>
         </div>
         <div class="block-right">
-          <div class="time">1:34:23</div>
+          <div class="time"></div>
+        </div>
+      </div>
+      <div class="citygroup" id="london">
+        <div class="blockLeft">
+          <h2 class="city">London</h2>
+          <div class="date"></div>
+        </div>
+        <div class="block-right">
+          <div class="time"></div>
         </div>
       </div>
       <div class="citygroup" id="tokyo">
         <div class="blockLeft">
           <h2 class="city" >Tokyo</h2>
-          <div class="date">August 15th 2024</div>
+          <div class="date"></div>
         </div>
         <div class="block-right">
-          <div class="time">1:34:23</div>
+          <div class="time"></div>
         </div>
       </div>
       <footer>
@@ -53,6 +62,12 @@ function showClock() {
     tokyoDate.innerHTML = moment.tz("Asia/Tokyo").format("MMMM Do YYYY");
     let tokyoTime = tokyo.querySelector(".time");
     tokyoTime.innerHTML = moment.tz("Asia/Tokyo").format("HH:mm:ss");
+
+    let london = document.querySelector("#london");
+    let londonDate = london.querySelector(".date");
+    londonDate.innerHTML = moment.tz("Europe/London").format("MMMM Do YYYY");
+    let londonTime = london.querySelector(".time");
+    londonTime.innerHTML = moment.tz("Europe/London").format("HH:mm:ss");
   }
   setInterval(updateClock, 1000);
 }
