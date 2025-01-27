@@ -1,38 +1,58 @@
 body {
+  background-color: black;
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/155/266/original/milky_way_galaxy_2-wallpaper-2560x1920.jpg?1737394964);
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: black;
   height: 100vh;
-}
-#click-me {
-  margin: 100px auto;
-  max-width: 300px;
-  transform: rotateZ(13deg);
-  left: 30%;
-  align-items: center;
-  display: block;
-}
-#click-me:hover {
-  animation: shake 0.2s infinite;
-  cursor: pointer;
 }
 h1 {
   font-size: 50px;
   margin: 0px 0px 20px;
 }
-#app {
-  text-align: center;
+h2 {
+  font-size: 25px;
+  margin: 0;
+}
+select {
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  color: rgb(71, 84, 110);
   font-family: "Genos", serif;
+  font-size: 15px;
+  margin-bottom: 20px;
+  padding: 7px 0px;
+  text-align: center;
+  width: 65%;
+}
+footer {
+  font-size: 12px;
+  padding-top: 50px;
+  text-align: center;
+}
+#click-me {
+  align-items: center;
+  display: block;
+  left: 30%;
+  margin: 100px auto;
+  max-width: 300px;
+  transform: rotateZ(13deg);
+}
+#click-me:hover {
+  animation: shake 0.2s infinite;
+  cursor: pointer;
+}
+#app {
+  background-color: #ffffff;
+  border: solid 1px rgba(254, 250, 216);
+  border-radius: 10px;
+  box-shadow: 0px 0px 74px 15px rgba(254, 250, 216, 0.8);
+  color: #3842ac;
+  font-family: "Genos", serif;
+  left: 400px;
+  margin: 0 auto;
+  text-align: center;
   padding: 30px;
   width: 500px;
-  border-radius: 10px;
-  color: #3842ac;
-  background-color: #ffffff;
-  margin: 0 auto;
-  left: 400px;
-  border: solid 1px rgba(254, 250, 216);
-  box-shadow: 0px 0px 74px 15px rgba(254, 250, 216, 0.8);
 }
 
 @keyframes shake {
@@ -56,51 +76,31 @@ h1 {
     transform: rotate(1deg) rotateZ(13deg);
   }
 }
-h2 {
-  font-size: 25px;
+#tiny-tardis {
+  left: 30px;
   margin: 0;
+  max-width: 100px;
+  overflow: visible;
+  position: sticky;
+  top: 0;
+  transform: rotateZ(13deg);
 }
-.date {
-  font-size: 20px;
+#tiny-tardis:hover {
+  animation: shake 0.2s infinite;
+  cursor: pointer;
 }
 .block-right {
   font-size: 30px;
   position: relative;
   top: 8px;
 }
-select {
-  padding: 7px 0px;
-  border-radius: 10px;
-  font-family: "Genos", serif;
-  background-color: #f6f6f6;
-  color: rgb(71, 84, 110);
-  font-size: 15px;
-  margin-bottom: 20px;
-  width: 65%;
-  text-align: center;
-}
-footer {
-  text-align: center;
-  padding-top: 50px;
-  font-size: 12px;
-}
-#tiny-tardis {
-  transform: rotateZ(13deg);
-  max-width: 100px;
-  position: sticky;
-  overflow: visible;
-  left: 30px;
-  top: 0;
-  margin: 0;
-}
-#tiny-tardis:hover {
-  cursor: pointer;
-  animation: shake 0.2s infinite;
+.date {
+  font-size: 20px;
 }
 .citygroup {
   display: flex;
   justify-content: space-between;
-  text-align: left;
-  padding: 10px 0px;
   margin-top: 20px;
+  padding: 10px 0px;
+  text-align: left;
 }
